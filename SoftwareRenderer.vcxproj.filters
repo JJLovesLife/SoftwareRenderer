@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\D3D\d3dApp.cpp" />
+    <ClCompile Include="src\D3D\d3dUtil.cpp" />
+    <ClCompile Include="src\D3D\GameTimer.cpp" />
+    <ClCompile Include="src\SR\Magnification\Magnification.cpp" />
+    <ClCompile Include="src\SR\SRDevice.cpp" />
+    <ClCompile Include="src\SR\SRDraw.cpp" />
+    <ClCompile Include="src\SR\SRUtils.cpp" />
+    <ClCompile Include="samples\cube\cube.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\D3D\d3dApp.h" />
+    <ClInclude Include="src\D3D\d3dUtil.h" />
+    <ClInclude Include="src\D3D\d3dx12.h" />
+    <ClInclude Include="src\D3D\GameTimer.h" />
+    <ClInclude Include="src\D3D\MathHelper.h" />
+    <ClInclude Include="src\SR\SRDevice.h" />
+    <ClInclude Include="src\SR\SRenum.h" />
+    <ClInclude Include="src\SR\SRUtils.h" />
+    <ClInclude Include="src\D3D\TF.h" />
+    <ClInclude Include="samples\cube\shader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\SR\SRDraw.inl" />
+  </ItemGroup>
+</Project>
