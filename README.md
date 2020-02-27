@@ -34,7 +34,7 @@ When in debug mode, press key **1-8** to set magnification level.
 - performance: 250fps @800\*600 @i5-8250U
 
 ### two triangles
-(define TestDepth in samples/cube/cube.cpp to enable this sample)
+(define TestDepth in samples/cube/cube.cpp to enable this sample)  
 debug mode with magnification level of 4.
 ![](https://github.com/MMaxwell66/SoftwareRenderer/blob/master/samples/cube/images/debug.jpg)
 - performance: 440fps @800\*600 @i5-8250U
