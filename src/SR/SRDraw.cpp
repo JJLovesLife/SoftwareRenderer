@@ -172,9 +172,9 @@ void SRDevice::RasterizeTriangle(const BYTE* vsOutput1, const BYTE* vsOutput2, c
 
 	// pointer setup
 #ifdef AllowQuadPS
-	BYTE* psInputPool = (BYTE*)malloc(8 * mPipelineState.VSOutputByteCount * 4);
+	BYTE* psInputPool = (BYTE*)_aligned_malloc(8 * ((mPipelineState.VSOutputByteCount * 4 + 63) / 64) * 64, 64);
 #else
-	BYTE* psInputPool = (BYTE*)malloc(8 * mPipelineState.VSOutputByteCount);
+	BYTE* psInputPool = (BYTE*)_aligned_malloc(8 * ((mPipelineState.VSOutputByteCount + 63) / 64) * 64, 64);
 #endif
 	XMFLOAT3* toInterpolate = (XMFLOAT3*)malloc((mPipelineState.VSOutputByteCount / 4 - 4) * sizeof(XMFLOAT3));
 	assert(psInputPool != nullptr);
@@ -184,9 +184,9 @@ void SRDevice::RasterizeTriangle(const BYTE* vsOutput1, const BYTE* vsOutput2, c
 	BYTE* psInputs[8];
 	for (UINT i = 0; i < 8; i++) {
 #ifdef AllowQuadPS
-		psInputs[i] = psInputPool + (4 * i) * mPipelineState.VSOutputByteCount;
+		psInputs[i] = psInputPool + i * ((mPipelineState.VSOutputByteCount * 4 + 63) / 64) * 64;
 #else
-		psInputs[i] = psInputPool + i * mPipelineState.VSOutputByteCount;
+		psInputs[i] = psInputPool + i * ((mPipelineState.VSOutputByteCount + 63) / 64) * 64;
 #endif
 	}
 
@@ -552,6 +552,6 @@ void SRDevice::RasterizeTriangle(const BYTE* vsOutput1, const BYTE* vsOutput2, c
 		}
 	//}
 end:
-	free(psInputPool);
+	_aligned_free(psInputPool);
 	free(toInterpolate);
 }

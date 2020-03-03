@@ -101,9 +101,6 @@
     <ClInclude Include="src\SR\SRUtils.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="src\SR\SRDraw.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

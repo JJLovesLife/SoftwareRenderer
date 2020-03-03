@@ -23,9 +23,6 @@
     <ClInclude Include="samples\cube\shader.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="readme.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="src\SR\SRDraw.inl" />
   </ItemGroup>
 </Project>
